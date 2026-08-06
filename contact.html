@@ -1,1 +1,991 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Portfolio</title>
+
+    <!-- CSS -->
+    <style>
+        /* ===========================
+   Google Font
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(12px);
+}
+
+.navbar{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#00e5ff;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin-left:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    transition:.4s;
+}
+
+.nav-links a:hover{
+    color:#00e5ff;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+    width:90%;
+    margin:auto;
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:100px;
+}
+
+.hero-content{
+    width:55%;
+}
+
+.hero-content h3{
+    font-size:28px;
+    color:#00e5ff;
+}
+
+.hero-content h1{
+    font-size:65px;
+    margin:15px 0;
+    line-height:1.2;
+}
+
+.hero-content h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:#ddd;
+    line-height:30px;
+    font-size:18px;
+}
+
+/* Buttons */
+
+.hero-btn{
+    margin-top:30px;
+}
+
+.btn,
+.btn2{
+    display:inline-block;
+    padding:14px 35px;
+    border-radius:40px;
+    text-decoration:none;
+    margin-right:15px;
+    transition:.4s;
+}
+
+.btn{
+    background:#00e5ff;
+    color:#000;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.btn2{
+    border:2px solid #00e5ff;
+    color:white;
+}
+
+.btn2:hover{
+    background:#00e5ff;
+    color:#000;
+}
+
+/* Social Icons */
+
+.social{
+    margin-top:35px;
+}
+
+.social a{
+    color:white;
+    font-size:25px;
+    margin-right:18px;
+    transition:.4s;
+}
+
+.social a:hover{
+    color:#00e5ff;
+    transform:translateY(-8px);
+}
+
+/* Hero Image */
+
+.hero-image img{
+    width:420px;
+    border-radius:25px;
+    animation:float 4s ease-in-out infinite;
+}
+
+/* ===========================
+   Team Section
+=========================== */
+
+.team{
+    padding:100px 8%;
+    text-align:center;
+}
+
+.team h2{
+    font-size:45px;
+    margin-bottom:50px;
+}
+
+.team-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 40px rgba(0,229,255,.4);
+}
+
+.card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #00e5ff;
+}
+
+.card h3{
+    margin-top:18px;
+    font-size:26px;
+}
+
+.card p{
+    color:#ccc;
+    margin-top:8px;
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-content{
+width:100%;
+margin-top:40px;
+}
+
+.hero-content h1{
+font-size:45px;
+}
+
+.hero-image img{
+width:300px;
+}
+
+.nav-links{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+/* ==========================================
+   PART 2B - ADVANCED ANIMATIONS
+==========================================*/
+
+/* Animated Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:#00e5ff;
+    border-radius:50%;
+    filter:blur(250px);
+    top:-250px;
+    left:-250px;
+    opacity:.25;
+    animation:move1 12s linear infinite alternate;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:#7c3aed;
+    border-radius:50%;
+    filter:blur(250px);
+    bottom:-250px;
+    right:-250px;
+    opacity:.25;
+    animation:move2 14s linear infinite alternate;
+    z-index:-2;
+}
+
+@keyframes move1{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(200px,150px);
+}
+
+}
+
+@keyframes move2{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-180px,-120px);
+}
+
+}
+
+/* Logo Animation */
+
+.logo{
+    animation:logoGlow 3s infinite;
+}
+
+@keyframes logoGlow{
+
+0%{
+text-shadow:0 0 10px cyan;
+}
+
+50%{
+text-shadow:0 0 35px cyan;
+}
+
+100%{
+text-shadow:0 0 10px cyan;
+}
+
+}
+
+/* Navbar Hover */
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:3px;
+background:#00e5ff;
+transition:.4s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+/* Button Glow */
+
+.btn{
+
+box-shadow:0 0 20px rgba(0,229,255,.4);
+
+}
+
+.btn:hover{
+
+box-shadow:0 0 45px cyan;
+transform:translateY(-8px);
+
+}
+
+.btn2:hover{
+
+box-shadow:0 0 35px cyan;
+
+}
+
+/* Social Icons */
+
+.social a{
+
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:50px;
+height:50px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+
+}
+
+.social a:hover{
+
+background:#00e5ff;
+color:black;
+transform:rotate(360deg);
+
+}
+
+/* Hero Text Animation */
+
+.hero-content h3{
+
+animation:slideLeft 1s ease;
+
+}
+
+.hero-content h1{
+
+animation:slideRight 1.2s ease;
+
+}
+
+.hero-content h2{
+
+animation:slideLeft 1.4s ease;
+
+}
+
+.hero-content p{
+
+animation:fadeUp 1.6s ease;
+
+}
+
+@keyframes slideLeft{
+
+from{
+
+opacity:0;
+transform:translateX(-80px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes slideRight{
+
+from{
+
+opacity:0;
+transform:translateX(80px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Hero Image */
+
+.hero-image img{
+
+transition:.5s;
+
+}
+
+.hero-image img:hover{
+
+transform:scale(1.05) rotate(2deg);
+
+}
+
+/* Team Cards */
+
+.card{
+
+overflow:hidden;
+position:relative;
+
+}
+
+.card::before{
+
+content:"";
+position:absolute;
+width:150%;
+height:150%;
+background:linear-gradient(45deg,
+transparent,
+rgba(255,255,255,.15),
+transparent);
+
+top:-150%;
+left:-150%;
+transition:.8s;
+
+}
+
+.card:hover::before{
+
+top:100%;
+left:100%;
+
+}
+
+.card img{
+
+transition:.5s;
+
+}
+
+.card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.card h3{
+
+transition:.4s;
+
+}
+
+.card:hover h3{
+
+color:#00e5ff;
+
+}
+
+/* Scroll Animation */
+
+.hidden{
+
+opacity:0;
+transform:translateY(80px);
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* Footer */
+
+footer{
+
+padding:30px;
+text-align:center;
+font-size:18px;
+background:rgba(0,0,0,.4);
+margin-top:80px;
+
+}
+
+footer span{
+
+color:#00e5ff;
+
+}
+
+/* Selection */
+
+::selection{
+
+background:#00e5ff;
+color:black;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#0f172a;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#00e5ff;
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:white;
+
+}
+    </style>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<h2 class="logo">Team<span>Portfolio</span></h2>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="project.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+
+</ul>
+
+<div class="menu-btn">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h3>Hello 👋 We Are</h3>
+
+<h1>Creative Web Developers</h1>
+
+<h2>
+Murad • Gufran • Himanshu • Suresh
+</h2>
+
+<p>
+
+We are passionate web developers creating modern,
+responsive and interactive websites using HTML,
+CSS and JavaScript.
+
+</p>
+
+<div class="hero-btn">
+
+<a href="#" class="btn">Explore</a>
+
+<a href="#" class="btn2">Our Projects</a>
+
+</div>
+
+<div class="social">
+
+<a href="#"><i class="fa-brands fa-github"></i></a>
+
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwdJJET6zyLl8IwNB-YSn2ffQWdwYYIxpNZDCvw1UzdJ09kA1xwRkHc7w&s=10" alt="Team Image">
+
+</div>
+
+</section>
+
+<!-- ================= TEAM ================= -->
+
+<section class="team">
+
+<h2>Meet Our Team</h2>
+
+<div class="team-container">
+
+<div class="card">
+
+<img src="https://thumbs.dreamstime.com/z/lost-thoughts-thoughtful-young-african-man-formalwear-keeping-hands-clasped-looking-away-sitting-outdoors-40584702.jpg" alt="Murad">
+
+<h3>Murad</h3>
+
+<p>Frontend Developer</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://thumbs.dreamstime.com/b/portrait-male-african-american-professional-possibly-business-executive-corporate-ceo-finance-attorney-lawyer-sales-stylish-155546880.jpg" alt="Gufran">
+
+<h3>Gufran</h3>
+
+<p>Frontend Developer</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://thumbs.dreamstime.com/b/crossed-arms-serious-portrait-businessman-office-confidence-finance-career-outdoor-professional-crossed-arms-438250421.jpg" alt="Himanshu">
+
+<h3>Himanshu</h3>
+
+<p>UI / UX Designer</p>
+
+</div>
+
+<div class="card">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXlJeAX-Kj08dOdxOKdAMrfWjKKjbZgJ5SGcadj2EjHRapmTDv1wnEyAK1&s=10" alt="Suresh">
+
+<h3>Suresh</h3>
+
+<p>JavaScript Developer</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- JS -->
+
+<script>
+    // ===============================
+// Mobile Menu Toggle
+// ===============================
+
+const menuBtn = document.querySelector(".menu-btn");
+const navLinks = document.querySelector(".nav-links");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// ===============================
+// Sticky Navbar
+// ===============================
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.style.background = "rgba(15,23,42,0.95)";
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.3)";
+    } else {
+        header.style.background = "rgba(0,0,0,.35)";
+        header.style.boxShadow = "none";
+    }
+});
+
+// ===============================
+// Typing Animation
+// ===============================
+
+const roles = [
+    "Frontend Developers",
+    "Creative Designers",
+    "Web Developers",
+    "UI / UX Designers"
+];
+
+const typingText = document.querySelector(".hero-content h2");
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const currentRole = roles[roleIndex];
+
+    if (!deleting) {
+        typingText.textContent = currentRole.substring(0, charIndex++);
+    } else {
+        typingText.textContent = currentRole.substring(0, charIndex--);
+    }
+
+    let speed = deleting ? 60 : 120;
+
+    if (!deleting && charIndex === currentRole.length + 1) {
+        deleting = true;
+        speed = 1500;
+    }
+
+    if (deleting && charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+// ===============================
+// Scroll Reveal Animation
+// ===============================
+
+const hiddenElements = document.querySelectorAll(".card,.hero-content,.hero-image");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+});
+
+hiddenElements.forEach(el => {
+
+    el.classList.add("hidden");
+
+    observer.observe(el);
+
+});
+
+// ===============================
+// Active Navbar
+// ===============================
+
+const links = document.querySelectorAll(".nav-links a");
+
+links.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        links.forEach(item => item.classList.remove("active"));
+
+        link.classList.add("active");
+
+    });
+
+});
+
+// ===============================
+// Floating Background Stars
+// ===============================
+
+for (let i = 0; i < 50; i++) {
+
+    const star = document.createElement("span");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * window.innerWidth + "px";
+
+    star.style.top = Math.random() * window.innerHeight + "px";
+
+    star.style.animationDuration = (Math.random() * 4 + 2) + "s";
+
+    document.body.appendChild(star);
+
+}
+
+// ===============================
+// Cursor Glow
+// ===============================
+
+const cursor = document.createElement("div");
+
+cursor.className = "cursor";
+
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove", e => {
+
+    cursor.style.left = e.clientX + "px";
+
+    cursor.style.top = e.clientY + "px";
+
+});
+
+// ===============================
+// Smooth Scroll
+// ===============================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            target.scrollIntoView({
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    });
+
+});
+
+console.log("Professional Portfolio Loaded Successfully");
+</script>
+
+</body>
+</html>
